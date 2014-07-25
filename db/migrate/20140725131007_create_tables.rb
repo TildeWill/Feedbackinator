@@ -4,7 +4,6 @@ class CreateTables < ActiveRecord::Migration
   		t.string :username
   		t.string :password_digest
   		t.string :cohort
-
     end
 
   	create_table :feedbacks do |t|
