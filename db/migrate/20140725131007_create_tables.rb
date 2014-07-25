@@ -4,12 +4,12 @@ class CreateTables < ActiveRecord::Migration
   		t.string :username
   		t.string :password_digest
   		t.string :cohort
-      t.boolean :student?
+      t.string :type
     end
   	
   	create_table :feedbacks do |t|
   		t.belongs_to :category
-  		t.belongs_to :user
+  	  t.belongs_to :user
   		t.belongs_to :subfeedback
       t.string :title
   		t.string :content
