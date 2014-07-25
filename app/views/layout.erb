@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
+
   <link rel="stylesheet" href="/css/normalize.css">
   <!--
     application.css is where you put your styles
@@ -18,6 +19,18 @@
   <title></title>
 </head>
 <body>
+  <h1>Feedback Pro</h1>
+  <ul id="navbar">
+  <li><a href="/posts/new">New Post</a></li>
+  <li><a href="/users/email">Profile</a></li>
+  <% if session[:user_id] == nil %>
+  <li><a href="/signup_login">Login</a></li>
+  <% else %>
+  <li><a href="/logout">Logout</li></a>
+  <% end %>
+</ul>
   <%= yield %>
+  <br>
+  <br>
 </body>
 </html>
