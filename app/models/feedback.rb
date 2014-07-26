@@ -3,7 +3,5 @@ class Feedback < ActiveRecord::Base
  	has_many :subfeedbacks, class_name: "Feedback", foreign_key: :subfeedback_id
  	belongs_to :category
 
- 	def student_feedbacks
-
- 	end
+ 
 end
