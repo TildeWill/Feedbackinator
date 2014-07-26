@@ -8,6 +8,8 @@ User.create(username: "Alex Flores", password_digest: "password", cohort: "")
 User.create(username: "Nikola Savic", password_digest: "password", cohort: "")
 User.create(username: "Rebecca Miller-Webster", password_digest: "password", cohort: "")
 User.create(username: "Tanner Welsh", password_digest: "password", cohort: "")
+User.create(username: "Matt Bundy", password_digest: "password", cohort: "")
+
 
 # 25.times{Feedback.create(title: ["Antonio","cleaning","EE", "Party options", "Daily naps"].sample, content: Faker::Lorem.paragraph, teacher_id: rand(26..50))}
 
