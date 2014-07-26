@@ -7,7 +7,7 @@ end
 
 post '/feedback' do
   @category = Category.find_by(name: params[:your_category])
-  current_user.feedbacks.create(title: params[:title], content: params[:feedback], category_id: @category.id)
+  current_user.feedbacks.create(title: params[:title], content: params[:feedback], category_id: @category.id, private_public: params[:private])
 
   redirect '/'
 end

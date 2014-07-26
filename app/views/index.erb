@@ -1,4 +1,18 @@
 <div class="container">
   <h1>Welcome to DBC Feedbackinator!</h1>
-  
+  <% if current_user == nil %>
+  	<h1>You should login first if you're a DBC student</h1>
+  <% end %>
+  <% if current_user != nil %>
+  <% @feedbacks.each do |feedback| %>
+  	<% if current_user.cohort != "Staff" && feedback.private_public == false %>
+  		Title: <%= feedback.title %><br><br>
+  		Content:<%= feedback.content %> <br><br>
+  	<% end %>
+  	<% if current_user.cohort == "Staff" %>
+  		Title: <%= feedback.title %> <br><br>
+  		Content: <%= feedback.content %> <br><br>
+  	<% end %>
+  <% end %>
+  <% end %>
 </div>

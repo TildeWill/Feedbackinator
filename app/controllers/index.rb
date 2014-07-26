@@ -1,4 +1,6 @@
 get '/' do
-  # Look in app/views/index.erb
+  @feedbacks = Feedback.all
+  
+
   erb :index
 end
