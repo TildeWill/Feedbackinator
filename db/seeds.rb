@@ -4,9 +4,11 @@
 
 
 
-
 # 25.times{Feedback.create(title: ["Antonio","cleaning","EE", "Party options", "Daily naps"].sample, content: Faker::Lorem.paragraph, teacher_id: rand(26..50))}
 
+Category.create(name: "dishes")
+Category.create(name: "cleaning")
+Category.create(name: "teacher_instruction")
 
 
 

@@ -1,5 +1,5 @@
 <h2>Feedback Form</h2>
-<form action="" method="post">
+<form action="/feedback" method="post">
 	Select your cohort:
 	<br><select name="your_cohort">
       <option value="Caterpillar">Caterpillar</option>
@@ -7,7 +7,14 @@
       <option value="Woodchuck">Woodchuck</option>
       <option value="Staff">Staff</option>
     </select><br><br>	
-
-	<textarea name="feedback"></textarea>
-
+	Select your category:
+	<br><select name="your_category">
+	<% @categories.each do |category| %>
+		<option><%= category.name %></option>
+    <% end %>	
+    </select><br><br>
+    <h3>Enter feedback here</h3>
+    Title: <input type="text" name="title"><br><br>	
+	Content: <textarea name="feedback"></textarea><br><br>
+	<input type="submit" value="submit">
 </form>
