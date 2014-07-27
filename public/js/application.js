@@ -1,3 +1,70 @@
+$(document).ready(function () {
+
+
+$("form#addcomment").submit(function(event) {
+  event.preventDefault();
+  // var comment=$(this).serialize();
+  
+
+	$.ajax({
+            type: 'POST',
+            url: $(this).attr('action'),
+            data:  {formcontent: $('#commentmessage').val()},
+  
+            // Mostramos un mensaje con la respuesta de PHP
+           success: function(data) {
+	            console.log("success");
+	            newcomment=JSON.parse(data);
+	   
+	            $('#commentbody').append("</br></br>" +  newcomment);
+           },
+           fail: function(data) {
+           console.log("fail");
+           }
+        }); 
+ }); 
+
+
+ });  
+
+  // $('form#postvotes').submit(function(e){
+  // 	e.preventDefault();
+
+  // 	var post_id = $('.hidden').html()
+
+
+  // 	$.ajax ({
+  // 		type: 'post',
+  // 		url: '/posts/'+post_id+'/vote',
+  // 		data: $(this).serialize()
+  // 	}).success(function(data) {
+  // 		current_votes = $('#countpostvotes');
+  // 		current_votes.html(data);
+  // 		$("#commentvotebutton").hide();
+  // 	}).fail(function(data){
+  // 		console.log("not working!")
+  // 	})
+  // })
+
+//   $('form#addcomment').submit(function(e) {
+//   	e.preventDefault();
+
+//   	var feedback_id = $('.hidden').html()
+
+//   	$.ajax ({
+//   		type: 'post',
+//   		url: '/feedbacks/'+feedback_id+'/comments',
+//   		data: $(this).serialize()
+//   	}).success(function(data){
+//   		data=JSON.parse(data)
+//   		$('#comments').prepend(+data+);
+//   		// $('#comments').html(data)
+//   		// $('#text').val('');
+//   	}).fail(function(data) {
+//   		console.log("Not working")
+//   	})
+//   })
+// });
 
 
 
