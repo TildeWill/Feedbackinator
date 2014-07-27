@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -18,20 +19,30 @@
   <title></title>
 </head>
 <body>
-  <a href="/">Home</a>
+  <ul id="slidingMenu" class="slidingMenu">
+  <li><a href="/">Home</a></li>
   <% if current_user %>
-    <a href="user_profile/<%= current_user.id %>"><%= current_user.username %></a>
-    <a href="/signout">Sign Out</a>
+    <li><a href="user_profile/<%= current_user.id %>"><%= current_user.username %></a></li>
+    <li><a href="/signout">Sign Out</a></li>
   <% else %>
-    <a href="/login">Login</a>
+    <li><a href="/login">Login</a></li>
   <% end %>
   <% if current_user != nil %>
-  <a href="/feedback">Create Feedback</a>
-  <a href="/category/new">Create Category</a>
+  <li><a href="/feedback">Create Feedback</a></li>
+  <li><a href="/category/new">Create Category</a></li>
   <% if current_user.cohort != "Staff" %>
-   <a href="/questionnaire/new">Questionnaire</a>
+   <li><a href="/questionnaire/new">Questionnaire</a></li>
   <% end %>
   <% end %>
   <%= yield %>
+  </ul>
 </body>
+    <div id="slidingMenuDesc" class="slidingMenuDesc">
+      <div><span>Maybe that's what life is... a wink of the eye and winking stars.</span></div>
+      <div><span>Every man dies. Not every man really lives.</span></div>
+      <div><span>It is your work in life that is the ultimate seduction.</span></div>
+      <div><span>It's the friends you can call up at 4 a.m. that matter. </span></div>
+      <div><span>We are time's subjects, and time bids be gone. </span></div>
+    </div>
 </html>
+

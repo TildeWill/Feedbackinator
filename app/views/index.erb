@@ -1,7 +1,5 @@
-<div class="container">
-  <h1>Welcome to DBC Feedbackinator!</h1>
-  <% if current_user == nil %>
-  	<h1>You should login first if you're a DBC student</h1>
+
+ <% if current_user == nil %>
   <% end %>
   <% if current_user != nil %>
   <% @feedbacks.each do |feedback| %>
@@ -15,4 +13,4 @@
   	<% end %>
   <% end %>
   <% end %>
-</div>
+
