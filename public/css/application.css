@@ -14,6 +14,94 @@ body{
 
 }
 
+
+h2 {
+  text-transform: uppercase;
+  font-size: 16px;
+  margin-bottom: 0;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+
+  &.no-separator {
+    border: none;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+  li {
+    display: inline-block;
+    margin: 0 20px;
+  }
+
+.flt {
+  float:right;
+}
+/* Base Button Style */
+.btn {
+  position: relative;
+  display: block;
+  width: 250px;
+  margin: 20px auto;
+  padding: 10px;
+
+  background-color: #fff;
+  border: 1px solid #ccc;
+
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transform-style: flat;
+  transition: all 250ms ease-out;
+
+  &:before,
+  &:after {
+      content: "";
+      position: absolute;
+      z-index: -2;
+      transition: all 250ms ease-out;
+  }
+}
+
+
+
+/* Curl effects – curls right hand side on hover */
+.paper-curl-right-side {
+  &:before,
+  &:after {
+    width: 50%;
+    height: 55%;
+    max-width: 200px;
+    max-height: 100px;
+  }
+  &:before {
+    top: 12px;
+    box-shadow: 1px -4px 12px rgba(31, 31, 31, 0.6);
+  }
+  &:after {
+    bottom: 12px;
+    box-shadow: 1px 4px 12px rgba(31, 31, 31, 0.6);
+  }
+  &:hover {
+    right: 0;
+    border-radius: 0 3% 3% 0 / 0% 50% 50% 0;
+
+    &:before {
+      box-shadow: 10px -4px 12px rgba(31, 31, 31, 0.8);
+      transform: skew(-8deg) rotate(-3deg);
+    }
+    &:after {
+      box-shadow: 10px 4px 12px rgba(31, 31, 31, 0.8);
+      transform: skew(8deg) rotate(3deg);
+    }
+  }
+}
 .header{
   width:600px;
   height:56px;

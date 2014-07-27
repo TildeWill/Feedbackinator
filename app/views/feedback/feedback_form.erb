@@ -17,26 +17,23 @@
 		<option><%= category.name %></option>
     <% end %>
   </select>
-    <div class="name">Enter feedback here</div>
-    <div class="name">Title:</div>
+  <br><br><br>
+    <div class="name">Title of your post:</div>
     <div class="inputs">
       <input type="text" id="name" name= "title" />
     </div>
-    <div class="name">Content:</div>
     <div class="inputs">
-          <textarea name="feedback"></textarea>
+      <textarea name="feedback"></textarea>
     </div>
-  <div class="name">Private Post?</div>
-  <div class="name">Private posts are only visible to staff members</div>
-	<select name="private">
+      <div class="name">Make this private?</div>
+	<select name="private" class="styled">
 		<option>true</option>
 		<option>false</option>
-	</select><br><br>
+	</select>
+
+  <footer>
+    <div class="flt">Private posts are only visible to staff members</div>
+  </footer>
   <input type="submit" value="Submit Feedback" class="button" />
 </form>
-<!--
-<select name="d" class="styled">
-  <option value="1">Option 1</option>
-  <option value="2">Option 2</option>
-  <option value="3">Option 3</option>
-</select> -->
+
