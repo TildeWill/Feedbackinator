@@ -18,12 +18,23 @@ post '/feedback' do
 end
 
 post '/displayfeedback' do
-	# value=params[:value].to_s
-	# @category=Category.where(name: value)
-	# @category.id.to_i.to_json 
-	@feedback=Feedback.find_by_cohort(params[:value])
+	@category=Category.find_by_name(params[:value])
 	#puts @category.id
 	return @category.id.to_json
 end
+
+
+
+# post '/displayfeedback' do
+# 	# value=params[:value].to_s
+# 	# @category=Category.where(name: value)
+# 	# @category.id.to_i.to_json 
+# 	@users=User.find_all_by_cohort(params[:value])
+# 	@feedback=@users.feedbacks
+# 	#puts @category.id
+# 	return @feedback.to_json
+# end
+
+
 
 

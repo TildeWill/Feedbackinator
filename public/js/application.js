@@ -1,3 +1,6 @@
+
+
+
 $(document).ready(function() {
 
 
@@ -40,10 +43,6 @@ $(document).ready(function() {
 
 
 
-
-
-
-
 // $(document).ready(function() {
 
 
@@ -71,9 +70,6 @@ $(document).ready(function() {
 // 	   // <%= feedback.title %> <% end %>");
 
 //    	},
-
-
-   	
    	   
 //       // console.log(data)},
 //     fail: function(){console.log("fail") }
@@ -81,3 +77,9 @@ $(document).ready(function() {
 
 //   });
 //   });
+
+
+
+
+
+

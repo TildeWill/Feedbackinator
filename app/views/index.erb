@@ -2,15 +2,14 @@
   <h1>Welcome to DBC Feedbackinator!</h1>
 
 
- <h2> View By Cohort: <h2>
+
+ <h2> View By Feedback Category: <h2>
 
 	<form id="displayfeedback" action="/displayfeedback" method="POST">
 	Filter by Category: <select name="name" id="displaychoice">
-
-		<option value="woodchucks"> Woodchucks</option>
-		<option value="newts"> Newts</option>
-		<option value="caterpillars"> Caterpillars</option>
-
+	<% @categories.each do |category| %>
+		<option value="<%=category.name%>"> <%=category.name%></option>
+	<%end%>
 	</select>
 	<input type="submit" value="Submit">
 	</form>
