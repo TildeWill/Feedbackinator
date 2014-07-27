@@ -1,7 +1,9 @@
 <div class="container">
-  <h1>Welcome to DBC Feedbackinator!</h1>
+  <h1 align="center">Welcome to DBC Feedbackinator!</h1>
 
-
+  <% if current_user == nil %>
+    <h2 align="center">Log in to view feedback.</h1>
+  <% else %>
 
 
 	<form id="displayfeedback" action="/displayfeedback" method="POST">
@@ -33,12 +35,8 @@
 
 
 
-<div class="displaycat"> 
 
-
-   <% if current_user == nil %>
-    <h1>You should login first if you're a DBC student</h1>
-  <% else %>
+ 
     <% if current_category %>
       <h2> <%= current_category.name %></h2>
       <% current_category.feedbacks.each do |feedback| %>
@@ -84,8 +82,6 @@
 
 <% end %>
 
-
-</div>
 
 
 

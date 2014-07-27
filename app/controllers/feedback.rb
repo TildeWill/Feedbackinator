@@ -11,33 +11,23 @@ get '/yourfeedback' do
 end
 
 post '/feedback' do
-  @category = Category.find_by(name: params[:your_category])
-  current_user.feedbacks.create(title: params[:title], content: params[:feedback], category_id: @category.id, private_public: params[:private])
-
+  @category = Category.find_by_name(params[:your_category])
+  current_user.feedbacks.create(title: params[:title], content: params[:feedback], category: @category.id, private_public: params[:private])
   redirect '/'
 end
 
 post '/displayfeedback' do
-
     @category=Category.find_by_name(params[:name])
     session[:cohort_name]=nil
     session[:category_id]=@category.id
     redirect to ('/')
-
 end
 
 
 post '/displaycohort' do
-  # if params[:name] === "Woodchucks" || params[:name]== "Newts" || params[:name]=="Caterpillars"
- #    @cohort=User.find_all_by_cohort(params[:name])
- #  else
     session[:category_id]=nil
     @cohort=params[:cohortname]
     redirect "/?cohort=#{@cohort}"
-  # end
-  # # #puts @category.id
-  # # return @category.id.to_json
- #  redirect to ('/')
 end
 
 
