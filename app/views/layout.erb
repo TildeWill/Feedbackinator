@@ -25,9 +25,13 @@
   <% else %>
     <a href="/login">Login</a>
   <% end %>
+  <% if current_user != nil %>
   <a href="/feedback">Create Feedback</a>
   <a href="/category/new">Create Category</a>
-
+  <% if current_user.cohort != "Staff" %>
+   <a href="/questionnaire/new">Questionnaire</a>
+  <% end %>
+  <% end %>
   <%= yield %>
 </body>
 </html>
