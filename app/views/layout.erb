@@ -20,7 +20,7 @@
 <body>
   <a href="/">Home</a>
   <% if current_user %>
-    <%= current_user.username %>
+    <a href="user_profile/<%= current_user.id %>"><%= current_user.username %></a>
     <a href="/signout">Sign Out</a>
   <% else %>
     <a href="/login">Login</a>
