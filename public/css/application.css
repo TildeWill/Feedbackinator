@@ -13,69 +13,35 @@ body{
   background:#292929;
 
 }
-.slidingMenu {
-  position: absolute;
-  height:410px;
-  width: 700px;
-  right:1px;
-  top:40px;
-  font-family: Arial, Helvetica, sans-serif;
+
+.header{
+  width:600px;
+  height:56px;
+  position:absolute;
+  top:0px;
+  left:25%;
+  background:#fff url(title.png) no-repeat top left;
 }
-.slidingMenu li {
-  display:block;
-  float:right;
-  clear:both;
-  position:relative;
-  overflow:hidden;
+a.back{
+  width:256px;
+  height:73px;
+  position:fixed;
+  bottom:15px;
+  right:15px;
+  background:#fff url(codrops_back.png) no-repeat top left;
 }
-.slidingMenu li.move {
-  width: 9px;
-  height: 68px;
-  right:0px;
-  padding-right:10px;
-  margin-top:2px;
-  z-index: 8;
-  position: absolute;
-  background: #2183c4;
-  background:
-    -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(#0771b8),
-      to(#2183c4)
-    );
-  background:
-    -moz-linear-gradient(
-      top,
-      #0771b8,
-      #2183c4
-    );
-  -moz-border-radius: 8px 0px 0px 8px;
-  -webkit-border-top-left-radius: 8px;
-  -webkit-border-bottom-left-radius: 8px;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  -moz-box-shadow:1px 1px 5px #000;
-  -webkit-box-shadow:1px 1px 5px #000;
-  box-shadow:1px 1px 5px #000;
-  }
-.slidingMenu li a {
-  font-size:50px;
-  text-transform:uppercase;
-  text-decoration: none;
-  color: grey;
-  outline: none;
-  text-indent:5px;
-  z-index: 10;
-  display: block;
-  float: right;
-  height: 66px;
-  line-height: 66px;
-  position: relative;
-  overflow: hidden;
-  padding-right:10px;
+.scroll{
+  width:133px;
+  height:61px;
+  position:fixed;
+  bottom:15px;
+  left:150px;
+  background:#fff url(scroll.png) no-repeat top left;
 }
+.info{
+  text-align:right;
+}
+
 .checkbox, .radio {
   width: 19px;
   height: 25px;
@@ -98,7 +64,16 @@ body{
   background: url(select.png) no-repeat;
   overflow: hidden;
 }
-
+span.reference{
+  position:fixed;
+  left:10px;
+  bottom:10px;
+  ont-size:14px;
+}
+span.reference a{
+  color:#aaa;
+  text-decoration:none;
+}
 
 @import url(http://fonts.googleapis.com/css?family=Quicksand);
 body { background: #eee; margin: 50px 0 0 0; font-family: 'Ubuntu', sans-serif; }
