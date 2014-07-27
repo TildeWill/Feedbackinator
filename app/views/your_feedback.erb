@@ -4,8 +4,9 @@
   	<% current_user.feedbacks.each do |feedback| %>
   	Title: <%= feedback.title %></br>
   	Content: <%= feedback.content %></br>
-  	Category: <%= feedback.category %></br>
+  	Category: <%= feedback.category.name %></br>
   	Subfeedbacks: <%= feedback.subfeedbacks %></br>
+  	<a href="/delete/feedback/<%=feedback.id%>"> Delete </a> 
   </br></br>
   	<% end %>
 
