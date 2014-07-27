@@ -13,8 +13,9 @@ end
 
 post '/feedback' do
   @category = Category.find_by_name(params[:your_category])
+  @user=current_user
   current_user.feedbacks.create(title: params[:title], content: params[:feedback], category_id: @category.id, private_public: params[:private])
-  redirect '/'
+  redirect "/users/#{current_user.id}/feedbacks"
 end
 
 post '/displayfeedback' do
@@ -45,11 +46,11 @@ end
 get '/delete/feedback/:id' do
   @feedback = Feedback.find(params[:id])
   @feedback.destroy
-  redirect to ('/yourfeedback/:id')
+  redirect "/users/#{current_user.id}/feedbacks"
 end
 
 
-get '/feedback/:id' do
+get '/feedbacks/:id' do
   @feedback = Feedback.find(params[:id])
 
   erb :"feedback/specific_feedback"
@@ -57,17 +58,15 @@ end
 
 
 
-post '/posts/:id/comments' do
-  post_id = params[:id] 
-  if logged_in? == true
+post '/feedbacks/:id/comments' do
+    feedback_id = params[:id] 
     user_id = session[:user_id]
-    @post = Post.find(post_id)
-    @comment = Comment.create(body: params[:comment], user_id: user_id)
-    @post.comments << @comment
-    @comment.body.to_s
-    erb :'post/comment', layout: false
-  else
-    redirect "/posts/#{post_id}"
-  end
+    @feedback = Feedback.find(feedback_id)
+    @comment = Comment.create(content: params[:content], user_id: user_id)
+    @feedback.comments << @comment
+    @comment.content.to_s
+    redirect "/feedbacks/#{feedback_id}"
 end
+
+
 

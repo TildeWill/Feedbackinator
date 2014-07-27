@@ -33,7 +33,7 @@
         <h2> <%= current_category.name %></h2>
         <% current_category.feedbacks.each do |feedback| %>
            <% if current_user.cohort != "Staff" && feedback.private_public == false %>
-            Title: <a href="/feedback/<%=feedback.id%>"><%= feedback.title %></a><br><br>
+            Title: <a href="/feedbacks/<%=feedback.id%>"><%= feedback.title %></a><br><br>
             Content:<%= feedback.content %> <br><br>
           </br></br>
           <% end %>
@@ -48,7 +48,7 @@
         <h2> <%= @incohort.first.cohort %></h2>
         <% @incohort.each do |person| %>
           <% person.feedbacks.each do |feedback| %>
-          Title: <a href="/feedback/<%=feedback.id%>"><%= feedback.title %></a><br>
+          Title: <a href="/feedbacks/<%=feedback.id%>"><%= feedback.title %></a><br>
           Category: <%= feedback.category.name %></br>
           Content: <%= feedback.content %></br>
          </br></br>
@@ -58,7 +58,7 @@
         <% else %>
         <% @feedbacks.each do |feedback| %>
             <% if current_user.cohort != "Staff" && feedback.private_public == false %>
-              Title: <a href="/feedback/<%=feedback.id%>"><%= feedback.title %></a><br>
+              Title: <a href="/feedbacks/<%=feedback.id%>"><%= feedback.title %></a><br>
               Category: <%= feedback.category.name %></br>
               Content:<%= feedback.content %> <br><br>
                </br></br>
