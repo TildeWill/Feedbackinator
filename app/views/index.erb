@@ -6,11 +6,11 @@
   <% if current_user != nil %>
   <% @feedbacks.each do |feedback| %>
   	<% if current_user.cohort != "Staff" && feedback.private_public == false %>
-  		Title: <%= feedback.title %><br><br>
+  		Title: <a href="/feedback/<%= feedback.id %>"><%= feedback.title %><br><br></a>
   		Content:<%= feedback.content %> <br><br>
   	<% end %>
   	<% if current_user.cohort == "Staff" %>
-  		Title: <%= feedback.title %> <br><br>
+  		Title: <a href="/feedback/<%= feedback.id %>"><%= feedback.title %></a> <br><br>
   		Content: <%= feedback.content %> <br><br>
   	<% end %>
   <% end %>
