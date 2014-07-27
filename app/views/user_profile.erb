@@ -1,0 +1,5 @@
+<h2> Your feedbacks </h2><br><br>
+	<% @feedbacks.each do |feedback| %>
+	  Title: <%= feedback.title %> <br> <br>
+	  Content: <%= feedback.content %> <br><br>
+	<% end %>

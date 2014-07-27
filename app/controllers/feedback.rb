@@ -44,3 +44,9 @@ end
 
 
 
+get '/feedback/:id' do
+  @feedback = Feedback.find(params[:id])
+
+  erb :"feedback/specific_feedback"
+end
+

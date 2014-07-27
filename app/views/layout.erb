@@ -24,6 +24,7 @@
 <body>
  
   <% if current_user %>
+<<<<<<< HEAD
    <div id="name">
        <strong> Welcome <%= current_user.username %>! </strong> 
   </div>
@@ -38,16 +39,30 @@
     <li><a href="/yourfeedback">Your Feedback</a></li>
     <li><a href="/signout">Sign Out</a></li>
     </ul>
+=======
+    <a href="user_profile/<%= current_user.id %>"><%= current_user.username %></a>
+    <a href="/signout">Sign Out</a>
+>>>>>>> fe872295d0b64c9b7ae32241fe64ce47c3f186ef
   <% else %>
     <li><a href="/">HOME</a></li>
     <li><a href="/login">Login</a></li>
     </ul>
   <% end %>
+<<<<<<< HEAD
 
 </div>
 
 
 
+=======
+  <% if current_user != nil %>
+  <a href="/feedback">Create Feedback</a>
+  <a href="/category/new">Create Category</a>
+  <% if current_user.cohort != "Staff" %>
+   <a href="/questionnaire/new">Questionnaire</a>
+  <% end %>
+  <% end %>
+>>>>>>> fe872295d0b64c9b7ae32241fe64ce47c3f186ef
   <%= yield %>
 </body>
 </html>
