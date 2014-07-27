@@ -18,11 +18,27 @@ post '/feedback' do
 end
 
 post '/displayfeedback' do
-	@category=Category.find_by_name(params[:value])
-	#puts @category.id
-	return @category.id.to_json
+
+    @category=Category.find_by_name(params[:name])
+    session[:cohort_name]=nil
+    session[:category_id]=@category.id
+    redirect to ('/')
+
 end
 
+
+post '/displaycohort' do
+  # if params[:name] === "Woodchucks" || params[:name]== "Newts" || params[:name]=="Caterpillars"
+ #    @cohort=User.find_all_by_cohort(params[:name])
+ #  else
+    session[:category_id]=nil
+    @cohort=params[:cohortname]
+    redirect "/?cohort=#{@cohort}"
+  # end
+  # # #puts @category.id
+  # # return @category.id.to_json
+ #  redirect to ('/')
+end
 
 
 # post '/displayfeedback' do

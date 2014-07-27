@@ -3,45 +3,97 @@
 
 
 
- <h2> View By Feedback Category: <h2>
 
 	<form id="displayfeedback" action="/displayfeedback" method="POST">
 	Filter by Category: <select name="name" id="displaychoice">
 	<% @categories.each do |category| %>
 		<option value="<%=category.name%>"> <%=category.name%></option>
 	<%end%>
+  <!-- <option value="Woodchucks"> Woodchucks</option>
+  <option value="Newts"> Newts</option>
+  <option value="Caterpillars"> Caterpillars</option> -->
 	</select>
 	<input type="submit" value="Submit">
 	</form>
 
 
+  <form id="displaycohort" action="/displaycohort" method="POST">
+  Filter by Cohort: <select name="cohortname" id="displaycohort">
+  
+    <option value="Woodchucks"> Woodchucks</option>
+    <option value="Newts"> Newts</option>
+    <option value="Caterpillars"> Caterpillars</option>
+  
+  <!-- <option value="Woodchucks"> Woodchucks</option>
+  <option value="Newts"> Newts</option>
+  <option value="Caterpillars"> Caterpillars</option> -->
+  </select>
+  <input type="submit" value="Submit">
+  </form>
+
+
 
 <div class="displaycat"> 
+
+
+   <% if current_user == nil %>
+    <h1>You should login first if you're a DBC student</h1>
+  <% else %>
+    <% if current_category %>
+      <h2> <%= current_category.name %></h2>
+      <% current_category.feedbacks.each do |feedback| %>
+         <% if current_user.cohort != "Staff" && feedback.private_public == false %>
+          Title: <%= feedback.title %><br><br>
+          Content:<%= feedback.content %> <br><br>
+        </br></br>
+        <% end %>
+        <% if current_user.cohort == "Staff" %>
+          Title: <%= feedback.title %> <br><br>
+          Content: <%= feedback.content %> <br><br>
+        </br></br>
+        <% end %>
+       <%end%>
+     
+    <% elsif @incohort %>
+      <h2> <%= @incohort.first.cohort %></h2>
+      <% @incohort.each do |person| %>
+        <% person.feedbacks.each do |feedback| %>
+
+        Title: <%= feedback.title %></br>
+        Content: <%= feedback.content %></br>
+       </br></br>
+      <%end%>
+       <%end%>
+
+      <% else %>
+     <% @feedbacks.each do |feedback| %>
+        <% if current_user.cohort != "Staff" && feedback.private_public == false %>
+          Title: <%= feedback.title %><br><br>
+          Content:<%= feedback.content %> <br><br>
+           </br></br>
+        <% end %>
+        <% if current_user.cohort == "Staff" %>
+          Title: <%= feedback.title %> <br><br>
+          Content: <%= feedback.content %> <br><br>
+           </br></br>
+        <% end %>
+    <% end %>
+  
+
+  <% end %>
+
+<% end %>
+
+
+</div>
+
+
+
+
+   
 
 </div>
 	
 
 
-  <% if current_user == nil %>
-  	<h1>You should login first if you're a DBC student</h1>
-  <% end %>
-  <% if current_user != nil %>
-  <% @feedbacks.each do |feedback| %>
-  	<% if current_user.cohort != "Staff" && feedback.private_public == false %>
-  		Title: <%= feedback.title %><br><br>
-  		Content:<%= feedback.content %> <br><br>
-  	<% end %>
-  	<% if current_user.cohort == "Staff" %>
-  		Title: <%= feedback.title %> <br><br>
-  		Content: <%= feedback.content %> <br><br>
-  	<% end %>
-  <% end %>
-  <% end %>
-</div>
-
-
-</br></br>
-
-
-
-
+ 
