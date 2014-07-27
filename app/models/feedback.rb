@@ -1,6 +1,6 @@
 class Feedback < ActiveRecord::Base
   belongs_to :user
- 	has_many :subfeedbacks, class_name: "Feedback", foreign_key: :subfeedback_id
+ 	has_many :comments
  	belongs_to :category
 
  

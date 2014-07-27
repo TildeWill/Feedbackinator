@@ -8,3 +8,4 @@ post '/category/new' do
   end
   redirect '/'
 end
+

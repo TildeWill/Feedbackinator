@@ -11,8 +11,8 @@ class CreateTables < ActiveRecord::Migration
   	  t.belongs_to :user
   		t.belongs_to :subfeedback
       t.string :title
-  		t.string :content
-      t.boolean :private
+  		t.text :content
+      t.boolean :private_public
       t.string :vote_count, default: 0
   	end
 
