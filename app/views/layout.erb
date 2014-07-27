@@ -21,12 +21,14 @@
 <body>
   <ul id="slidingMenu" class="slidingMenu">
   <li><a href="/">Home</a></li>
+
   <% if current_user %>
     <li><a href="user_profile/<%= current_user.id %>"><%= current_user.username %></a></li>
     <li><a href="/signout">Sign Out</a></li>
   <% else %>
     <li><a href="/login">Login</a></li>
   <% end %>
+
   <% if current_user != nil %>
   <li><a href="/feedback">Create Feedback</a></li>
   <li><a href="/category/new">Create Category</a></li>
@@ -34,8 +36,9 @@
    <li><a href="/questionnaire/new">Questionnaire</a></li>
   <% end %>
   <% end %>
+    </ul>
   <%= yield %>
-  </ul>
+
 </body>
 </html>
 
