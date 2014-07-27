@@ -1,21 +1,4 @@
-.container {
-  margin: 20px auto;
-  margin-left: -2em;
-  width: 700px;
-  padding: 0px 20px 20px 20px;
-  font-size: 35px;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #ddd;
-  outline: none;
-  text-indent: 5px;
-  z-index: 10;
-  display: block;
-  line-height: 66px;
-  position: relative;
-  overflow: hidden;
-  padding-right: 10px;
-}
+
 th {
   text-align: left;
 }
@@ -93,11 +76,32 @@ body{
   overflow: hidden;
   padding-right:10px;
 }
-
+.checkbox, .radio {
+  width: 19px;
+  height: 25px;
+  padding: 0 5px 0 0;
+  background: url(checkbox.png) no-repeat;
+  display: block;
+  clear: left;
+  float: left;
+}
+.radio {
+  background: url(radio.png) no-repeat;
+}
+.select {
+  position: absolute;
+  width: 158px;
+  height: 21px;
+  padding: 0 24px 0 8px;
+  color: #fff;
+  font: 12px/21px arial,sans-serif;
+  background: url(select.png) no-repeat;
+  overflow: hidden;
+}
 
 
 @import url(http://fonts.googleapis.com/css?family=Quicksand);
-body { background: #eee; margin: 50px 0 0 0; font-family: Quicksand; }
+body { background: #eee; margin: 50px 0 0 0; font-family: 'Ubuntu', sans-serif; }
 input:focus, button:focus, textarea:focus, select:focus { outline: 0; }
 
 #wrapper { width: 400px; text-align: center; margin: 0 auto; left: 1px; }
