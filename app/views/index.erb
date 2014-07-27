@@ -1,13 +1,16 @@
 <div class="container">
   <h1>Welcome to DBC Feedbackinator!</h1>
 
-<h2> Select Feedback to View: <h2>
+
+ <h2> View By Cohort: <h2>
 
 	<form id="displayfeedback" action="/displayfeedback" method="POST">
 	Filter by Category: <select name="name" id="displaychoice">
-	<% @categories.each do |category| %>
-		<option value="<%=category.name%>"> <%=category.name%></option>
-	<%end%>
+
+		<option value="woodchucks"> Woodchucks</option>
+		<option value="newts"> Newts</option>
+		<option value="caterpillars"> Caterpillars</option>
+
 	</select>
 	<input type="submit" value="Submit">
 	</form>
@@ -15,15 +18,31 @@
 
 
 <div class="displaycat"> 
+
+</div>
 	
 
+
+  <% if current_user == nil %>
+  	<h1>You should login first if you're a DBC student</h1>
+  <% end %>
+  <% if current_user != nil %>
+  <% @feedbacks.each do |feedback| %>
+  	<% if current_user.cohort != "Staff" && feedback.private_public == false %>
+  		Title: <%= feedback.title %><br><br>
+  		Content:<%= feedback.content %> <br><br>
+  	<% end %>
+  	<% if current_user.cohort == "Staff" %>
+  		Title: <%= feedback.title %> <br><br>
+  		Content: <%= feedback.content %> <br><br>
+  	<% end %>
+  <% end %>
+  <% end %>
 </div>
 
 
 </br></br>
 
 
-<div id="feedbackshow"> 
-	<%= erb :your_feedback %>
-</div>
+
 
