@@ -1,4 +1,29 @@
 <div class="container">
   <h1>Welcome to DBC Feedbackinator!</h1>
-  
+
+<h2> Select Feedback to View: <h2>
+
+	<form id="displayfeedback" action="/displayfeedback" method="POST">
+	Filter by Category: <select name="name" id="displaychoice">
+	<% @categories.each do |category| %>
+		<option value="<%=category.name%>"> <%=category.name%></option>
+	<%end%>
+	</select>
+	<input type="submit" value="Submit">
+	</form>
+
+
+
+<div class="displaycat"> 
+	
+
 </div>
+
+
+</br></br>
+
+
+<div id="feedbackshow"> 
+	<%= erb :your_feedback %>
+</div>
+

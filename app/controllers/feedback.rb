@@ -1,7 +1,6 @@
 get '/feedback' do
   @categories = Category.all
 
-
   erb :"feedback/feedback_form"	
 end
 
@@ -12,4 +11,11 @@ post '/feedback' do
   redirect '/'
 end
 
-
+post '/displayfeedback' do
+	# value=params[:value].to_s
+	# @category=Category.where(name: value)
+	# @category.id.to_i.to_json 
+	@category=Category.find_by_name(params[:value])
+	#puts @category.id
+	return @category.id.to_json
+end

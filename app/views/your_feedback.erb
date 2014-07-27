@@ -1,0 +1,11 @@
+ <% if current_user %>
+  	<h3> Your Feedback </h3>
+  	<% current_user.feedbacks.each do |feedback| %>
+  	Title: <%= feedback.title %></br>
+  	Content: <%= feedback.content %></br>
+  	Category: <%= feedback.category %></br>
+  	Subfeedbacks: <%= feedback.subfeedbacks %></br>
+  </br></br>
+  	<% end %>
+
+<%end%>
