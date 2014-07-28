@@ -59,14 +59,13 @@ end
 
 
 post '/feedbacks/:id/comments' do
-    feedback_id = params[:id] 
-    user_id = session[:user_id]
-    @feedback = Feedback.find(feedback_id)
+    user_id = current_user.id
+    @feedback = Feedback.find(params[:id])
   # puts params.inspect
-    @comment = Comment.create(content: params[:formcontent], user_id: user_id)
+    @comment = Comment.create(content: params[:content], user_id: user_id)
     @feedback.comments << @comment
+    redirect ("/feedbacks/#{@feedback.id}")
     return @comment.content.to_json
-    #redirect "/feedbacks/#{feedback_id}"
 end
 
 

@@ -10,24 +10,27 @@
 
 </br>
 
-
-<p><strong><small>Comments</strong></p>		
-	<div id="commentbody">	
-			<% @feedback.comments.each_with_index do |comment, index| %>
-  	<%=index+1%> <%= comment.content %><br><br>
-		<% end %>
-
-	</div>
-
-</br></br>
-
-	<strong>Add a comment</strong>
+<strong>Add a comment</strong>
 <form method="post" id="addcomment" action="/feedbacks/<%=@feedback.id %>/comments">
 	    <textarea id="commentmessage" type="text" cols="50" rows="4" name="content" placeholder="Type your comment here."></textarea>
 	    <br>
 	    <input type="submit" value="Submit">
   	</form>
 
+
+
+
+<p><strong><small>Comments</strong></p>		
+	<div id="commentbody">	
+			<% @feedback.comments.each_with_index do |comment, index| %>
+  	<%=index+1%>. <%= comment.content %><br><br>
+		<% end %>
+
+	</div>
+
+</br></br>
+
+	
 
 
 
