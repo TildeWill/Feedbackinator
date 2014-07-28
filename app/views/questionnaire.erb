@@ -1,25 +1,35 @@
-<div class="container">
-
+<div id="wrapper">
+  <section>
+  <div class="name">On a scale of 1 to 5, how challenged do you feel?</div>
 <form action="/questionnaire/new" method="post">
-
-<h2>On a scale of 1 to 5, how challenged do you feel</h2><br><br>
-<input type="radio" name="challenge" value="1">1 
-<input type="radio" name="challenge" value="2">2 
-<input type="radio" name="challenge" value="3">3 
-<input type="radio" name="challenge" value="4">4 
-<input type="radio" name="challenge" value="5">5 
-
-<br><br>
-<h2>On a scale of 1 to 5, how helpful was the instruction</h2><br><br>
-<input type="radio" name="help" value="1">1
-<input type="radio" name="help" value="2">2
-<input type="radio" name="help" value="3">3
-<input type="radio" name="help" value="4">4
-<input type="radio" name="help" value="5">5
-<br><br>
-
-<input type="submit" value="submit">
-
+      <input type="radio" name="challenge" class="styled" /> 1
+      <input type="radio" name="challenge" class="styled" /> 2
+      <input type="radio" name="challenge" class="styled" /> 3
+      <input type="radio" name="challenge" class="styled" /> 4
+      <input type="radio" name="challenge" class="styled" /> 5
+</section>
 </form>
 
+  <section>
+  <div class="name">On a scale of 1 to 5, how helpful was the instruction?</div>
+<form action="/questionnaire/new" method="post">
+      <input type="radio" name="help" class="styled" /> 1
+      <input type="radio" name="help" class="styled" /> 2
+      <input type="radio" name="help" class="styled" /> 3
+      <input type="radio" name="help" class="styled" /> 4
+      <input type="radio" name="help" class="styled" /> 5
+</section>
+</form>
+
+  <section>
+  <div class="name">On a scale of 1 to 5, how awesome is this app?</div>
+<form action="/questionnaire/new" method="post">
+      <input type="radio" name="help" class="styled" /> 1
+      <input type="radio" name="help" class="styled" /> 2
+      <input type="radio" name="help" class="styled" /> 3
+      <input type="radio" name="help" class="styled" /> 4
+      <input type="radio" name="help" class="styled" /> 5
+  <input type="submit" value="Submit form" class="button" />
+</section>
+</form>
 </div>

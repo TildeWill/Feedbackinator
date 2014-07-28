@@ -1,29 +1,38 @@
-<div class="container">
-<h2>Feedback Form</h2>
+<div id="wrapper">
+  <section>
+  <header>
+    <div class="name">Feedback Form</div>
+  </header>
 <form action="/feedback" method="post">
-	Select your cohort:
-	<br><select name="your_cohort">
+  <div class="name">Select your cohort:</div>
+    <select name="your_cohort" class="styled">
       <option value="Caterpillar">Caterpillar</option>
       <option value="Newt">Newt</option>
       <option value="Woodchuck">Woodchuck</option>
       <option value="Staff">Staff</option>
-    </select><br><br>	
-	Select your category:
-	<br><select name="your_category">
-	<% @categories.each do |category| %>
-		<option><%= category.name %></option>
-    <% end %>	
-    </select><br><br>
-    <h3>Enter feedback here</h3>
-    Title: <input type="text" name="title"><br><br>	
-	  Content: <textarea name="feedback"></textarea><br><br>
-	<h2>Private post?</h2>
-	<h3>Private posts are only visible to staff members</h3>
-	<select name="private">
-		<option>true</option>
-		<option>false</option>
-	</select><br><br>
-	<input type="submit" value="submit">
-</form>
+    </select>
+  <div class="name">Select your category:</div>
+   <select name="your_category" class="styled">
+   <% @categories.each do |category| %>
+    <option><%= category.name %></option>
+    <% end %>
+  </select>
+  <br><br><br>
+    <div class="name">Title of your post:</div>
+    <div class="inputs">
+      <input type="text" id="name" name= "title" />
+    </div>
+    <div class="inputs">
+      <textarea name="feedback"></textarea>
+    </div>
+      <div class="name">Make this private?</div>
+  <select name="private" class="styled">
+    <option>true</option>
+    <option>false</option>
+  </select>
 
-</div>
+  <footer>
+    <div class="flt">Private posts are only visible to staff members</div>
+  </footer>
+  <input type="submit" value="Submit Feedback" class="button" />
+</form>

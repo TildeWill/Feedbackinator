@@ -1,11 +1,12 @@
-<div class="container">
+<div id="wrapper">
+	<section>
 	<h1>Check out this awesome feedback and comment on it </h1>
 </br></br>
 	<strong>Title:</strong><%= @feedback.title %><br>
 	<strong> Submitter Cohort: </strong> <%=@feedback.user.cohort %></br>
 	<strong>Category:</strong><%= @feedback.category.name %></br>
 	<strong>Content:</strong> <%= @feedback.content %></br><br>
-	
+	</section>
 
 
 </br>
@@ -20,8 +21,8 @@
 
 
 
-<p><strong><small>Comments</strong></p>		
-	<div id="commentbody">	
+<p><strong><small>Comments</strong></p>
+	<div id="commentbody">
 			<% @feedback.comments.each_with_index do |comment, index| %>
   	<%=index+1%>. <%= comment.content %><br><br>
 		<% end %>
@@ -30,7 +31,7 @@
 
 </br></br>
 
-	
+
 
 
 
