@@ -62,9 +62,9 @@ post '/feedbacks/:id/comments' do
     user_id = current_user.id
     @feedback = Feedback.find(params[:id])
   # puts params.inspect
-    @comment = Comment.create(content: params[:content], user_id: user_id)
+    @comment = Comment.create(content: params[:formcontent], user_id: user_id)
     @feedback.comments << @comment
-    redirect ("/feedbacks/#{@feedback.id}")
+    # redirect ("/feedbacks/#{@feedback.id}")
     return @comment.content.to_json
 end
 
