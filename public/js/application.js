@@ -1,7 +1,22 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
-
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $('#vote').click(function(e){
+  	e.preventDefault();
+  	var feedback_id = $('#hidden').html();
+  	$.ajax({
+  		url:'/feedback/'+feedback_id+'/vote',
+  		dataType: 'json',
+  		method: 'post',
+  		data: {}
+  		}).success(function(data) {
+  			console.log(data)
+  		}).fail(function(data){
+  			console.log("not working!")
+  		})
+  });
 });
+
+
+
+
+
+

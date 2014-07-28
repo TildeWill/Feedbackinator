@@ -1,3 +1,9 @@
 <h1>Check out this awesome feedback and comment on it </h1>
 <%= @feedback.title %><br>
-<%= @feedback.content %><br>
+<%= @feedback.content %><br><br>
+<h5>Vote for this post by clicking the button</h5>
+<input id="vote" type="submit" value="Vote">
+
+<input type="hidden" value="<%= @feedback.id %>">
+<div id="hidden"><%= @feedback.id %></div>
+
