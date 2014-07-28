@@ -1,4 +1,9 @@
-
+.container {
+  margin-right: 10%;
+  margin-left: 10%;
+  width: 80%;
+  padding: 0px 20px 20px 20px;
+}
 th {
   text-align: left;
 }
@@ -68,13 +73,12 @@ ul {
       transition: all 250ms ease-out;
   }
 }
-
-
-
 /* Curl effects – curls right hand side on hover */
 .paper-curl-right-side {
   &:before,
   &:after {
+    top: 0;
+    left: 0;
     width: 50%;
     height: 55%;
     max-width: 200px;

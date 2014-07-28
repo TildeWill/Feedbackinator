@@ -1,16 +1,17 @@
 
- <% if current_user == nil %>
-  <% end %>
-  <% if current_user != nil %>
-  <% @feedbacks.each do |feedback| %>
+<div class="container">
+  <% if current_user == nil %>
+    <% end %>
+    <% if current_user != nil %>
+    <% @feedbacks.each do |feedback| %>
   	<% if current_user.cohort != "Staff" && feedback.private_public == false %>
-  		Title: <a href="/feedback/<%= feedback.id %>"><%= feedback.title %><br><br></a>
-  		Content:<%= feedback.content %> <br><br>
+  		 <a href="/feedback/<%= feedback.id %>"><%= feedback.title %></a>
+  		 <%= feedback.content %>
   	<% end %>
   	<% if current_user.cohort == "Staff" %>
-  		Title: <a href="/feedback/<%= feedback.id %>"><%= feedback.title %></a> <br><br>
-  		Content: <%= feedback.content %> <br><br>
+  		<a href="/feedback/<%= feedback.id %>"><%= feedback.content %></a>
+  		<%= feedback.content %>
   	<% end %>
   <% end %>
   <% end %>
-
+</div>
