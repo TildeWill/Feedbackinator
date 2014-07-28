@@ -36,6 +36,9 @@
      <li><a href="/feedback">Create Feedback</a></li>
     <li><a href="/category/new">Create Category</a></li>
     <li><a href="/users/<%=current_user.id%>/feedbacks">Your Feedback</a></li>
+    <% if current_user.cohort != "Staff" %>
+    <li><a href="/questionnaire/new">Questionnaire</a></li>
+    <% end %>
     <li><a href="/signout">Sign Out</a></li>
     </ul>
   <% else %>
