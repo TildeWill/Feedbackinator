@@ -1,8 +1,13 @@
+body {
+	font-family: 'Raleway', sans-serif;
+}
+
 .container {
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
+  font-family: 'Raleway', sans-serif;
 }
 th {
   text-align: left;
