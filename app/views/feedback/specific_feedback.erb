@@ -1,5 +1,43 @@
-<div id="wrapper">
-<h1>Check out this awesome feedback and comment on it </h1>
-<%= @feedback.title %><br>
-<%= @feedback.content %><br>
-</div>
+<div class="container">
+	<h1>Check out this awesome feedback and comment on it </h1>
+</br></br>
+	<strong>Title:</strong><%= @feedback.title %><br>
+	<strong> Submitter Cohort: </strong> <%=@feedback.user.cohort %></br>
+	<strong>Category:</strong><%= @feedback.category.name %></br>
+	<strong>Content:</strong> <%= @feedback.content %></br><br>
+	
+
+
+</br>
+
+<strong>Add a comment</strong>
+<form method="post" id="addcomment" action="/feedbacks/<%=@feedback.id %>/comments">
+	    <textarea id="commentmessage" type="text" cols="50" rows="4" name="content" placeholder="Type your comment here."></textarea>
+	    <br>
+	    <input type="submit" value="Submit">
+  	</form>
+
+
+
+
+<p><strong><small>Comments</strong></p>		
+	<div id="commentbody">	
+			<% @feedback.comments.each_with_index do |comment, index| %>
+  	<%=index+1%>. <%= comment.content %><br><br>
+		<% end %>
+
+	</div>
+
+</br></br>
+
+	
+
+
+
+
+
+
+
+
+  </div>
+>>>>>>> master

@@ -7,6 +7,7 @@
 th {
   text-align: left;
 }
+
 body, ul, li, h1, h2, span{
   margin:0;
   padding:0;
@@ -190,4 +191,38 @@ input:focus, button:focus, textarea:focus, select:focus { outline: 0; }
 #wrapper section .forgot { width: 100%; float: left; margin: 25px 0 0 0; }
 #wrapper section .forgot a { color: #999; text-decoration: none; -moz-transition: 0.2s linear; -webkit-transition: 0.2s linear; }
 #wrapper section .forgot a:hover { color: #444; }
+
+/*
+ #navbar ul { 
+	margin: 0; 
+	padding: 5px; 
+	list-style-type: none; 
+	text-align: center; 
+	background-color: #000; 
+	} 
+ 
+#navbar ul li {  
+	color: white;
+	display: inline; 
+	} 
+
+
+#navbar ul li a { 
+	text-decoration: none; 
+	padding: .2em 1em; 
+	color: #fff; 
+	background-color: #000; 
+	} 
+ 
+#navbar ul li a:hover { 
+	color: #000; 
+	background-color: #fff; 
+	} 
+
+	#name{
+		text-align: center;
+		font-size: 25px;
+
+	}*/
+ 
 

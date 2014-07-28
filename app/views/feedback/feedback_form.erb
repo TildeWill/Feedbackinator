@@ -12,9 +12,9 @@
       <option value="Staff">Staff</option>
     </select>
   <div class="name">Select your category:</div>
-	 <select name="your_category" class="styled">
-	 <% @categories.each do |category| %>
-		<option><%= category.name %></option>
+   <select name="your_category" class="styled">
+   <% @categories.each do |category| %>
+    <option><%= category.name %></option>
     <% end %>
   </select>
   <br><br><br>
@@ -26,14 +26,13 @@
       <textarea name="feedback"></textarea>
     </div>
       <div class="name">Make this private?</div>
-	<select name="private" class="styled">
-		<option>true</option>
-		<option>false</option>
-	</select>
+  <select name="private" class="styled">
+    <option>true</option>
+    <option>false</option>
+  </select>
 
   <footer>
     <div class="flt">Private posts are only visible to staff members</div>
   </footer>
   <input type="submit" value="Submit Feedback" class="button" />
 </form>
-

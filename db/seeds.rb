@@ -19,6 +19,8 @@ Category.create(name: "cleaning")
 Category.create(name: "teacher_instruction")
 
 
+150.times{Comment.create(content: Faker::Lorem.word, user_id: rand(1..50), feedback_id: rand(1..100))}
+
 
 
 # 20.times{Category.create(name: Faker::Hacker.now)}
