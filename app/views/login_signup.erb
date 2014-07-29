@@ -1,22 +1,38 @@
-<div class="container">
-<br><br>
-<h2>Login</h2>
-<form action="/login" method="post">
-	Username: <input type="text" name="username"><br><br>
-	Password: <input type="password" name="password"><br><br>
-	<input type="submit" name="submit"><br><br>
-</form>
+<div id="wrapper">
+  <section>
+    <header>
+      <div class="name">Username:</div>
+      <div class="password">Password:</div>
+    </header>
+    <form action="/login" method="post">
+      <div class="inputs">
+        <input type="text" id="name" name= "username" />
+        <input type="password" id="password" name="password" />
+      </div>
+      <input type="submit" value="Log in" class="button" />
+    </form>
+  </section>
+</div>
 
-<h2>Sign Up</h2>
-<form action="/signup" method="post">
-	Username: <input type="text" name="username"><br><br>
-	Cohort: <select name="cohort">
-      <option value="Caterpillar">Caterpillar</option>
-      <option value="Newt">Newt</option>
-      <option value="Woodchuck">Woodchuck</option>
-      <option value="Staff">Staff</option>
-    </select><br><br>
-    Password: <input type="password" name="password"><br><br>
-    <input type="submit" name="submit">
-</form>
+<div id="wrapper">
+  <section>
+    <header><br>
+      <div class="name">Username:</div>
+      <div class="password">Password:</div>
+      <div class="name">Cohort:</div>
+    </header>
+    <form action="/signup" method="post">
+      <div class="inputs"><br>
+        <input type="text" id="name" name= "username" />
+        <input type="password" id="password" name="password" />
+        <select name="cohort">
+        <option value="Caterpillar">Caterpillar</option>
+        <option value="Newt">Newt</option>
+        <option value="Woodchuck">Woodchuck</option>
+        <option value="Staff">Staff</option>
+        </select>
+      </div>
+      <input type="submit" value="Sign up" class="button" />
+    </form>
+  </section>
 </div>
