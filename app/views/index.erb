@@ -1,3 +1,7 @@
+<!-- Create a Filter class and have filterbycohort and filterbycategorymethod..
+Shouldn't have filtering logic here, should have it in model -->
+
+
 <div class="container">
   <h1 align="center">Welcome to DBC Feedbackinator!</h1>
 
@@ -6,74 +10,53 @@
   <% else %>
 
 
-  	<form id="displayfeedback" action="/displayfeedback" method="POST">
-  	Filter by Category: <select name="name" id="displaychoice">
-  	<% @categories.each do |category| %>
-  		<option value="<%=category.name%>"> <%=category.name%></option>
-  	<%end%>
-  	</select>
-  	<input type="submit" value="Submit">
-  	</form>
+    	<form id="displayfeedback" action="/displayfeedback" method="POST">
+    	Filter by Category: <select name="name" id="displaychoice">
+    	<% @categories.each do |category| %>
+    		<option value="<%=category.name%>"> <%=category.name%></option>
+    	<%end%>
+    	</select>
+    	<input type="submit" value="Submit">
+    	</form>
 
 
-    <form id="displaycohort" action="/displaycohort" method="POST">
-    Filter by Cohort: <select name="cohortname" id="displaycohort">
-      <option value="Woodchucks"> Woodchucks</option>
-      <option value="Newts"> Newts</option>
-      <option value="Caterpillars"> Caterpillars</option>
-    </select>
-    <input type="submit" value="Submit">
-    </form>
+      <form id="displaycohort" action="/displaycohort" method="POST">
+      Filter by Cohort: <select name="cohortname" id="displaycohort">
+        <option value="Woodchucks"> Woodchucks</option>
+        <option value="Newts"> Newts</option>
+        <option value="Caterpillars"> Caterpillars</option>
+      </select>
+      <input type="submit" value="Submit">
+      </form>
 
 
-</br></br>
+  </br></br>
 
-   
-      <% if current_category %>
-        <h2> <%= current_category.name %></h2>
-        <% current_category.feedbacks.each do |feedback| %>
+<!--    DELETE CONTROL FLOW, PUT IN MODEL, CREATE FILTER CLASS -->
+
+     
+
+  <div id="feedbacklist">
+        <h1> <%=@title%> </h1>
+        <% @feedbacks.each do |feedback| %>
+
            <% if current_user.cohort != "Staff" && feedback.private_public == false %>
             Title: <a href="/feedbacks/<%=feedback.id%>"><%= feedback.title %></a><br><br>
             Content:<%= feedback.content %> <br><br>
+            Category: <%= feedback.category.name %> <br><br>
           </br></br>
           <% end %>
           <% if current_user.cohort == "Staff" %>
             Title: <%= feedback.title %> <br><br>
             Content: <%= feedback.content %> <br><br>
+            Category: <%= feedback.category.name %> <br><br>
           </br></br>
           <% end %>
          <%end%>
        
-      <% elsif @incohort %>
-        <h2> <%= @incohort.first.cohort %></h2>
-        <% @incohort.each do |person| %>
-          <% person.feedbacks.each do |feedback| %>
-          Title: <a href="/feedbacks/<%=feedback.id%>"><%= feedback.title %></a><br>
-          Category: <%= feedback.category.name %></br>
-          Content: <%= feedback.content %></br>
-         </br></br>
-        <%end%>
-         <%end%>
+     <%end%>
 
-        <% else %>
-        <% @feedbacks.each do |feedback| %>
-            <% if current_user.cohort != "Staff" && feedback.private_public == false %>
-              Title: <a href="/feedbacks/<%=feedback.id%>"><%= feedback.title %></a><br>
-              Category: <%= feedback.category.name %></br>
-              Content:<%= feedback.content %> <br><br>
-               </br></br>
-            <% end %>
-            <% if current_user.cohort == "Staff" %>
-              Title: <%= feedback.title %> <br><br>
-              Category: <%= feedback.category.name %></br>
-              Content: <%= feedback.content %> <br><br>
-             </br></br>
-          <% end %>
-      <% end %>
-    <% end %>
-   <% end %>
-
-
+   </div>
 
 
 

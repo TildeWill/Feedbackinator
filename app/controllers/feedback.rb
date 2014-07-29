@@ -18,30 +18,20 @@ post '/feedback' do
   redirect "/users/#{current_user.id}/feedbacks"
 end
 
+
+
 post '/displayfeedback' do
-    @category=Category.find_by_name(params[:name])
-    session[:cohort_name]=nil
-    session[:category_id]=@category.id
-    redirect to ('/')
+    redirect "/?category=#{params[:name]}"
+
 end
 
 
 post '/displaycohort' do
-    session[:category_id]=nil
     @cohort=params[:cohortname]
     redirect "/?cohort=#{@cohort}"
 end
 
 
-# post '/displayfeedback' do
-# 	# value=params[:value].to_s
-# 	# @category=Category.where(name: value)
-# 	# @category.id.to_i.to_json 
-# 	@users=User.find_all_by_cohort(params[:value])
-# 	@feedback=@users.feedbacks
-# 	#puts @category.id
-# 	return @feedback.to_json
-# end
 
 get '/delete/feedback/:id' do
   @feedback = Feedback.find(params[:id])
@@ -61,6 +51,7 @@ end
 post '/feedbacks/:id/comments' do
     feedback_id = params[:id] 
     user_id = session[:user_id]
+    puts params.inspect
     @feedback = Feedback.find(feedback_id)
   # puts params.inspect
     @comment = Comment.create(content: params[:formcontent], user_id: user_id)

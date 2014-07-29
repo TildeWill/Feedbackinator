@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+ $('#feedbacklist').hide();
 
 $("form#addcomment").submit(function(event) {
   event.preventDefault();
@@ -9,9 +10,10 @@ $("form#addcomment").submit(function(event) {
 	$.ajax({
             type: 'POST',
             url: $(this).attr('action'),
-            data:  {formcontent: $('#commentmessage').val()},
+           data:  {formcontent: $('#commentmessage').val()},
+            //data: $(this).serialize();
   
-            // Mostramos un mensaje con la respuesta de PHP
+            
            success: function(data) {
 	            console.log("success");
 	            newcomment=JSON.parse(data);
@@ -26,6 +28,11 @@ $("form#addcomment").submit(function(event) {
 
 
  });  
+
+
+
+
+
 
   // $('form#postvotes').submit(function(e){
   // 	e.preventDefault();
