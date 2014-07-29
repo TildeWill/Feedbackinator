@@ -1,15 +1,14 @@
-<div class="container">
+<div id="wrapper">
+  <section>
 	<% if current_user %>
   	<h3> Your Feedback </h3>
   	<% current_user.feedbacks.each do |feedback| %>
   	Title: <%= feedback.title %></br>
   	Content: <%= feedback.content %></br>
   	Category: <%= feedback.category.name %></br>
-    <a href="/feedbacks/<%=feedback.id%>"> See Comments </a></br> 
-  	<a href="/delete/feedback/<%=feedback.id%>"> Delete </a> 
-  </br></br>
+    <a href="/feedbacks/<%=feedback.id%>"class="btn"> See Comments </a>
+  	<a href="/delete/feedback/<%=feedback.id%>" class="btn"> Delete </a>
   	<% end %>
-
 <%end%>
-
+</section>
 </div>

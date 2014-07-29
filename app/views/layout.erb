@@ -29,29 +29,24 @@
   </div>
   <%end%>
 
-  <div id ="navbar">
+  <div class="wrapper">
   <ul>
   <% if current_user %>
-     <li><a href="/">HOME</a></li>
-     <li><a href="/feedback">Create Feedback</a></li>
-    <li><a href="/category/new">Create Category</a></li>
-    <li><a href="/users/<%=current_user.id%>/feedbacks">Your Feedback</a></li>
+     <li><a href="/" class="btn">HOME</a></li>
+     <li><a href="/feedback" class="btn">Create Feedback</a></li>
+    <li><a href="/category/new" class="btn">Create Category</a></li>
+    <li><a href="/users/<%=current_user.id%>/feedbacks" class="btn">Your Feedback</a></li>
     <% if current_user.cohort != "Staff" %>
-    <li><a href="/questionnaire/new">Questionnaire</a></li>
+    <li><a href="/questionnaire/new" class="btn">Questionnaire</a></li>
     <% end %>
-    <li><a href="/signout">Sign Out</a></li>
+    <li><a href="/signout" class="btn">Sign Out</a></li>
     </ul>
   <% else %>
-    <li><a href="/">HOME</a></li>
-    <li><a href="/login">Login</a></li>
+    <li><a href="/" class="btn">HOME</a></li>
+    <li><a href="/login" class="btn">Login</a></li>
     </ul>
   <% end %>
-
-
 </div>
-
-
-
   <%= yield %>
 </body>
 </html>

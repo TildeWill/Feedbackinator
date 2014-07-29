@@ -1,5 +1,11 @@
-<h2> Your feedbacks </h2><br><br>
+<div id="wrapper">
+<section>
+<header>
+<div class="name"> Your feedbacks </div>
+</header>
 	<% @feedbacks.each do |feedback| %>
 	  Title: <%= feedback.title %> <br> <br>
 	  Content: <%= feedback.content %> <br><br>
 	<% end %>
+</section>
+</div>
