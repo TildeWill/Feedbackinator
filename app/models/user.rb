@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :feedbacks
   has_many :comments
   has_one :questionnaire
-#class method called .teachers and .students 
+#class method called .teachers and .students
 
 end
 
