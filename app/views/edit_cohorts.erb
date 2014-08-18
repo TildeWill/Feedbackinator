@@ -1,0 +1,33 @@
+	<% if current_user.cohort =="Staff" %>
+
+	<div id="wrapper">
+  <section>
+  <header>
+  </header>
+<div class="name">Create a Cohort</div> <br>
+<form action="/cohorts/new" method="post">
+    <div class="inputs">
+      <input type="text" id="cohort_name" name= "cohort_name" />
+    </div>
+  <input type="submit" value="Create Cohort" class="button" />
+</section>
+</form>
+</div>
+
+
+
+  <section>
+
+  	<h3> Edit Cohort </h3>
+  	<% current_user.feedbacks.each do |feedback| %>
+  	Title: <%= feedback.title %></br>
+  	Content: <%= feedback.content %></br>
+  	Category: <%= feedback.category.name %></br>
+    <a href="/feedbacks/<%=feedback.id%>"class="btn"> See Comments </a>
+  	<a href="/delete/feedback/<%=feedback.id%>" class="btn"> Delete </a>
+  	<% end %>
+<%end%>
+</section>
+</div>
+
+<%end%>

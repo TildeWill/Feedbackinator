@@ -14,3 +14,17 @@ get '/' do
 
   erb :index
 end
+
+
+
+get '/edit_cohorts' do
+	erb :edit_cohorts
+
+
+end
+
+
+post '/cohorts/new' do
+Cohort.create(name: params[:cohort_name])
+  redirect '/'
+end

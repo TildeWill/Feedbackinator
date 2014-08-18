@@ -3,9 +3,8 @@ get '/category/new' do
 end
 
 post '/category/new' do
-  each_category = params[:category].split(",").each do |category|
-  	Category.create(name: category)
-  end
+  	Category.create(name: params[:category_name])
+
   redirect '/'
 end
 
