@@ -7,7 +7,7 @@ gem 'pg'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'bcrypt'
-
+gem 'rspec'
 
 # Use Thin for our web server
 gem 'thin'
