@@ -1,6 +1,15 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    actionpack (4.1.4)
+      actionview (= 4.1.4)
+      activesupport (= 4.1.4)
+      rack (~> 1.5.2)
+      rack-test (~> 0.6.2)
+    actionview (4.1.4)
+      activesupport (= 4.1.4)
+      builder (~> 3.1)
+      erubis (~> 2.7.0)
     activemodel (4.1.4)
       activesupport (= 4.1.4)
       builder (~> 3.1)
@@ -20,11 +29,15 @@ GEM
     builder (3.2.2)
     daemons (1.1.9)
     diff-lcs (1.2.5)
+    erubis (2.7.0)
     eventmachine (1.0.3)
     faker (1.4.2)
       i18n (~> 0.5)
     i18n (0.6.11)
     json (1.8.1)
+    kaminari (0.16.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     minitest (5.4.0)
     multi_json (1.10.1)
     pg (0.17.1)
@@ -76,6 +89,7 @@ DEPENDENCIES
   activesupport
   bcrypt
   faker
+  kaminari
   pg
   rake
   rspec

@@ -8,6 +8,7 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'bcrypt'
 
+
 # Use Thin for our web server
 gem 'thin'
 
